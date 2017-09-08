@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.netease.antispam.account.AccountMapper">
+<mapper namespace="com.jack.general.account.AccountMapper">
      
-    <select id="getById" parameterType="string" resultType="Account">
+    <select id="getById" parameterType="Long" resultType="Account">
          SELECT * FROM account WHERE Id = #{id}
     </select>
     
@@ -12,7 +12,7 @@
         VALUES(#{id}, #{userName}, #{password}, #{realName}, #{authoritiesList}, #{creator}, #{insertTime})
     </insert>
     
-    <delete id="deleteByPassport" parameterType="string">
+    <delete id="deleteById" parameterType="Long">
         DELETE FROM account WHERE Id = #{id}
     </delete>
     

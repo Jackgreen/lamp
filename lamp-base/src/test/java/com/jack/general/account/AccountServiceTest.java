@@ -1,6 +1,8 @@
 package com.jack.general.account;
 
 import com.jack.general.AbsrtactUnitTest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import javax.annotation.Resource;
@@ -24,5 +26,28 @@ public class AccountServiceTest extends AbsrtactUnitTest {
         account.setCreator("auto");
         account.setInsertTime(System.currentTimeMillis());
         assertTrue(accountService.insertAccount(account));
+    }
+
+    @Test
+    public void testGetById() {
+        long id = 1L;
+        Account account = accountService.getAccountById(id);
+        logger.info(account.toString());
+    }
+
+    @Test
+    public void testDeleteById() {
+        long id = 1L;
+        boolean result = accountService.deleteAccountById(id);
+        logger.info(result);
+    }
+
+    @Test
+    public void testUpdateById() {
+        long id = 2L;
+        Account account = accountService.getAccountById(id);
+        account.setRealName("李四");
+        boolean result = accountService.updateAccount(account);
+        logger.info(result);
     }
 }

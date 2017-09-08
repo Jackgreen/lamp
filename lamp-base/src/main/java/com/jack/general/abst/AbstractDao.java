@@ -14,7 +14,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 public abstract class AbstractDao {
     private static final Logger logger = LogManager.getLogger();
 
-    protected static final String ACCOUNTMAPPER = "com.netease.antispam.account.AccountMapper.";
+    protected static final String ACCOUNTMAPPER = "com.jack.general.account.AccountMapper.";
 
     @Resource(name = "sqlSessionTemplate")
     protected SqlSessionTemplate sqlSessionTemplate;
